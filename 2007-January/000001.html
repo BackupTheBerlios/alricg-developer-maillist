@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Alricg-developer] GUI und ein gesundes neues Jahr.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/alricg-developer/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:alricg-developer%40lists.berlios.de?Subject=Re%3A%20%5BAlricg-developer%5D%20GUI%20und%20ein%20gesundes%20neues%20Jahr.&In-Reply-To=%3C459D4432.5030808%40gmx.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000000.html">
+   <LINK REL="Next"  HREF="000002.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Alricg-developer] GUI und ein gesundes neues Jahr.</H1>
+    <B>Vincent</B> 
+    <A HREF="mailto:alricg-developer%40lists.berlios.de?Subject=Re%3A%20%5BAlricg-developer%5D%20GUI%20und%20ein%20gesundes%20neues%20Jahr.&In-Reply-To=%3C459D4432.5030808%40gmx.de%3E"
+       TITLE="[Alricg-developer] GUI und ein gesundes neues Jahr.">vinc99 at gmx.de
+       </A><BR>
+    <I>Thu Jan  4 19:15:14 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000000.html">[Alricg-developer] GUI und ein gesundes neues Jahr.
+</A></li>
+        <LI>Next message: <A HREF="000002.html">[Alricg-developer] GUI und ein gesundes neues Jahr.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Michel!
+
+Ich war &#252;ber Silvester ein paar Tage weggefahren, bin erst jetzt wieder 
+zuhause. Daher die sp&#228;te Antwort.
+
+Ich bin mir nicht ganz sicher, was du mit &quot;View&quot; meinst, daher mit eine 
+kurze Begriffsdefinition wie ich es bisher verwendet habe:
+- Sicht: Eine Menge von &quot;Eclipse-Fenstern&quot; und deren Anordnung (also 
+Gr&#246;&#223;e, Position).
+- View: Hier gemeint in Sinne von &quot;Darstellung&quot;... ja, das ist nicht 
+sch&#246;n, da View ja auch Sicht hei&#223;en kann... Also mit View habe ich die 
+Darstellung von bestimmten Daten gemeint, also im Grunde ein Controll 
+was direkt mit Daten gekoppelt ist. Dies kann z.B. eine Tabelle aller 
+Talente sein, die ein Held bei der Generierung w&#228;hlen darf. Ein View 
+wird i.d.R. ein Panel sein, welches eine Table/TreeTable enth&#228;lt und ein 
+paar Controlls um diese zu Steuern.
+- Fenster: Ein Fenster ist das, was ich bei Sicht mit &quot;Eclipse-Fenstern&quot; 
+gemeint habe. Ein Fenster wird i.d.R. genau einen View enthalten (kann 
+aber auch Ausnahmen geben, besonders bei Editor).
+
+Auf Talente bezogen w&#252;rde es folgende Sichten und Views geben:
+1. &quot;Talente f&#252;r Held bei Generierung&quot; (das beinhaltet auch das 
+entfernen, Stufe angeben)
+
+    Die w&#252;rde neben den Standard-Fenstern (Navigation, &#220;bersicht &#252;ber
+    den Held, &#220;bersicht f&#252;r den Stand der Generierung, evtl. Hilfe,
+    o.&#228;.) ein Fenster beinhalten mit allen Talenten die der Held
+    ausw&#228;hlen kann (um  neue Talente hinzuf&#252;gen zu k&#246;nnen), und einem
+    Fenster mit allen Talenten die der Held bereits gew&#228;hlt hat (um die
+    Stufe zu Editieren, Talente zu entfernen usw.)
+    Diese beiden Talent-Fenster, w&#252;rden jeweils einen &quot;View&quot; enthalten.
+    Dieser View ist eine Darstellung der ben&#246;tigten Talente und w&#252;rde in
+    erster Linie eine TreeTable sein.
+
+2. &quot;Talente f&#252;r Held bei Heldenmanagement&quot;
+
+    Neben den Standard-Fenstern (Navigation, &#220;bersicht &#252;ber den Held,
+    evtl. Hilfe, o.&#228;.): Ein Fenster mit allen Talenten die der Held
+    ausw&#228;hlen kann (um  neue Talente hinzuf&#252;gen zu k&#246;nnen), und einem
+    Fenster mit allen Talenten die der Held bereits gew&#228;hlt hat (um die
+    Stufe zu Editieren,  usw.). Es ist also sehr &#228;hnlich zu 1). Trotzdem
+    ist es nicht gleich, so das hier andere Views ben&#246;tigt werden
+    (andere Dinge m&#252;ssen Dargestellt werden, andere Controlls sind n&#246;tig).
+
+3. &quot;Talent bearbeiten beim Editor&quot;
+
+    Diese Sicht ist also f&#252;r den Editor gedacht, also nicht f&#252;r die
+    Bearbeitung eines Chars, sondern f&#252;r die Bearbeitung des Talents
+    direkt. Diese Sicht beinhaltet neben den Standard-Fenstern
+    (Navigation, evtl. Hilfe, o.&#228;.) eine Fenster mit der Liste aller
+    Talente zum Ausw&#228;hlen eines Talents f&#252;r die Bearbeitung, und ein
+    Fenster wo das Talent bearbeitet werden kann (bzw. neu erstellt/
+    gel&#246;scht). Hier k&#246;nnte es auch passieren das nur ein Fenster beide
+    Views enth&#228;lt.
+
+
+
+Weiteres Vorgehen, wie ich es f&#252;r Sinnvoll halte: Die Views brauchst du 
+erstmal nicht machen, ich w&#252;rde es gut finden wenn du dich auf die 
+Steuerung der Sichten/Fenster konzentrierst.
+Dabei erscheint mir die Implementierung folgender Dinge in dieser 
+Reihenfolge sinnvoll:
+1. Anzeige / Auswahl von Sichten. In einem Menu werden verschiedene 
+Sichten angezeigt und werden per Mausklick geladen.
+2. Diese Anzeige von Sichten mu&#223; sich je mach Modi (Generierung / 
+Management / Editor) unterschieden k&#246;nnen, da wir ja f&#252;r jeden Modus 
+andere Sichten ben&#246;tigen. Sch&#246;n w&#228;hre es wenn du etwas einbaust wo wir 
+diese drei Modi Test weise einstellen k&#246;nnen (ein Menu, ein Start 
+Fenster mit 3 Buttons o.&#228;.)
+3. Anzeige / Auswahl von Fenstern: In einem Menu werden alle m&#246;glichen 
+Fenster des Modus angezeigt. Der Benutzer kann &#252;ber dieses Menu neue 
+Fenster &#246;ffnen. Ein Fenster ist z.B. &quot;Liste alle Talente&quot;, &quot;Liste der 
+Talente des Helden&quot;, &quot;Liste aller Zauber&quot;, .... &quot;Navigation&quot;, &quot;Hilfe&quot;, 
+&quot;&#220;bersicht &#252;ber Held&quot;, usw.
+4. Speichern / Laden von Fenstern und Ansichten. Die Sichten sollen 
+ver&#228;ndert/gel&#246;scht und gespeichert werden k&#246;nnen. Dabei gibt es eine Art 
+&quot;Save&quot; Befehl, mit dem die aktuellen Fenster und deren Anordnung 
+gespeichert wird. Es wird dabei die aktuelle Sicht &quot;&#252;berschrieben&quot;. 
+(Eine Sicht ist immer aktuell). Beim starten des Programms werden also 
+die Sichten aus einer Datei ausgelesen. Diese Datei kann die 
+&quot;config.xml&quot; sein. Du kannst aber auch einen eignende Datei benutzen, 
+falls dir das sinnvoller erscheint.
+5.Es soll &quot;Default&quot;-Sichten geben, die der Benutzer zwar &#228;ndern, aber 
+auch mit einen &quot;Restore&quot;-Befehl wiederherstellen kann. Alle Sichten die 
+von Anfang an im Programm zur Verf&#252;gung stehen, die solche 
+&quot;Default&quot;-Sichten. Diese &quot;original-Daten&quot; f&#252;r das Restore k&#246;nnen 
+Hard-gecoded sein, m&#252;ssen es aber nicht.
+6. Der Benutzer soll auch eignende Sichten anlegen k&#246;nnen, indem der die 
+aktuelle Sicht unter neuem Namen speichert.
+
+Im Grunde wird also ein Management f&#252;r Sichten und Fenster ben&#246;tigt. Der 
+Inhalt der Fenster ist dabei erstmal egal, am besten f&#252;llst du die 
+Fenster einfach mit jeweils einem Panel und Label auf dem etwas wie 
+&quot;Gesamt TalentListe&quot;, &quot;Helden TalentListe&quot; usw. steht.
+
+Wegen der Umbenennung/SVN-Problem: Ich hab jetzt leider keine Zeit mehr, 
+werde mir das nachher nochmal im Forum anschauen. Grunds&#228;tzlich k&#246;nnen 
+wird das auch gerne umbenennen, wenn es nur um Dateinamen geht.
+
+
+@Michel: Wir k&#246;nnen uns auch gerne im Chat treffen oder Telefonieren, 
+wenn es noch Fragen gibt die per Mail schlecht zu l&#246;sen sind.
+
+
+Ich w&#252;nsche auch auch mal nachtr&#228;glich ein sch&#246;nes neues Jahr und hoffe 
+das es das &quot;Alricg-Jahr&quot; wird ;-)
+
+mfg,
+Vincent
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000000.html">[Alricg-developer] GUI und ein gesundes neues Jahr.
+</A></li>
+	<LI>Next message: <A HREF="000002.html">[Alricg-developer] GUI und ein gesundes neues Jahr.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/alricg-developer">More information about the Alricg-developer
+mailing list</a><br>
+</body></html>

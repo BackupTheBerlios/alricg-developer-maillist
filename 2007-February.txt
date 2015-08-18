@@ -1,0 +1,94 @@
+From vinc99 at gmx.de  Thu Feb  1 22:53:46 2007
+From: vinc99 at gmx.de (Vincent)
+Date: Thu, 01 Feb 2007 22:53:46 +0100
+Subject: [Alricg-developer] Schnittstelle zu den Daten
+In-Reply-To: <45BE23CA.9030002@stud.tu-ilmenau.de>
+References: <45BE23CA.9030002@stud.tu-ilmenau.de>
+Message-ID: <45C2616A.5080200@gmx.de>
+
+Hi Michael!
+
+So, jetzt komme ich auch zum antworten.
+
+Vor allem anderen was Grunds?tzliches zu mir und dem Projekt.
+Wie es aussieht sind wir die beiden einzigen, die z.Z. noch bei dem 
+Projekt dabei sind. Das ist mit Sicherheit auch meine Schuld, da ich zu 
+wenig selber schaffe. Das wird sich auch nicht sooo schnell ?ndern, da 
+ich mit meinem neuen Vollzeit-Job einfach wenig Zeit habe, und vor allem 
+auch wenig Lust nach 8-Stunden vorm PC Sitzen noch zu hause weiter zu 
+machen. Aber das wird sich wieder ?ndern, ich gew?hne mich langsam an 
+die 8 Stunden und das Projekt ist mir auch ganz bestimmt nicht aus dem Kopf.
+Das hei?t das du im Moment ein wenig auf dich alleine gestellt bist.... 
+zumindest was das Implementieren angeht. Ansonsten versuche ich 
+nat?rlich f?r alle Fragen zur Verf?gung zu stehen.
+
+Wenn es dir Spa? macht freue ich mich nat?rlich wenn du weitermachst, 
+aber ich wollte das nur kl?ren, damit du wei? woran du im Moment bist.
+
+> Ich br?uchte jetzt irgendwie Infos, wie diese TreeTables mit Daten 
+> gef?llt werden, bzw. woher? 
+Es existieren Schnittstellen in dem package "org.d3s.alricg.gui.views". 
+Dort sind Interfaces zu finden sowie Implementierungen f?r Talente und 
+Zauber. Diese wurden noch f?r die Swing-Version Erstellung und haben 
+dort auch funktioniert, auch wenn es bestimmt noch Verbesserungsw?rdig 
+ist. In dem Wiki-Artikel 
+"http://www.alricg.de/devWiki/index.php/Tables_und_TreeTables_mit_ViewSchema" 
+findest du ein wenig Doku, wie das ganze gedacht ist.
+Das ganze ist leider relativ Komplex, weswegen ich meine das es 
+vielleicht Verbessert werden kann. Vielleicht hast du ja irgendwelche 
+Vorschl?ge? Noch k?nnten wir das Interface nochmal umstellen.
+
+> Ach ja hat jemand ne Idee wie wir meine RCP Implementierung in das SVN 
+> bekommen? Im Moment hab ich das nur in meinem eigenen SVN. Ich k?nnte 
+> die Dateien nat?rlich einfach in das alricg Verzeichnis kopieren und 
+> hochladen.
+Ich glaube nicht das jemand noch ?nderungen hat... Lade es einfach hoch! 
+Vielleicht kannst du die RCP-Klassen in ein eigenes Source-Verzeichnis 
+packen? Ist vielleicht besser wegen der ?bersicht.
+
+mfg,
+Vincent
+
+
+
+Das hei?t aber das
+
+Wobei ich Momentan auch keine gro?e Hilfe bin Seit ich Vollzeit arbeite 
+bleibt f?r Alricg einfach nicht viel Zeit. Das wird sich aber auch 
+wieder ?ndern, sprich, ich werde mir die Zeit wieder nehmen. Ich habe 
+das Projekt jedenfalls nicht aus
+
+
+
+
+Michael L?ck schrieb:
+> Hi,
+>
+> habe jetzt ein eigenes kleines SWT-Widget geschrieben, das man f?r alle 
+> die Views benutzen kann, die zwei TreeTables haben, zwischen denen man 
+> die Eintr?ge hin-und-her schubsen kann.
+>
+> Ich br?uchte jetzt irgendwie Infos, wie diese TreeTables mit Daten 
+> gef?llt werden, bzw. woher? ist sowas schon implementiert oder steht das 
+> noch aus? Je nachdem werde ich dann weitermachen. Also entweder ich 
+> stelle die Schnittstelle zur Verf?gung, oder ich fange an die 
+> Perspectives f?r die 3 Programm Modi zusammenzustellen.
+>
+> Ach ja hat jemand ne Idee wie wir meine RCP Implementierung in das SVN 
+> bekommen? Im Moment hab ich das nur in meinem eigenen SVN. Ich k?nnte 
+> die Dateien nat?rlich einfach in das alricg Verzeichnis kopieren und 
+> hochladen. Da w?rde ich aber sagen, ihr commitet ersmal alle ?nderungen 
+> und ich check das neu aus. Sonst gibts da Probleme.
+>
+> Gebt mir Bescheid wenn ihr soweit seid.
+>
+> Michel
+> _______________________________________________
+> Alricg-developer mailing list
+> Alricg-developer at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/alricg-developer
+>
+>   
+
+
+

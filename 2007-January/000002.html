@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Alricg-developer] GUI und ein gesundes neues Jahr.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/alricg-developer/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:alricg-developer%40lists.berlios.de?Subject=Re%3A%20%5BAlricg-developer%5D%20GUI%20und%20ein%20gesundes%20neues%20Jahr.&In-Reply-To=%3C459D54AB.5060802%40stud.tu-ilmenau.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000001.html">
+   <LINK REL="Next"  HREF="000003.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Alricg-developer] GUI und ein gesundes neues Jahr.</H1>
+    <B>Michael L&#252;ck</B> 
+    <A HREF="mailto:alricg-developer%40lists.berlios.de?Subject=Re%3A%20%5BAlricg-developer%5D%20GUI%20und%20ein%20gesundes%20neues%20Jahr.&In-Reply-To=%3C459D54AB.5060802%40stud.tu-ilmenau.de%3E"
+       TITLE="[Alricg-developer] GUI und ein gesundes neues Jahr.">michael.lueck at stud.tu-ilmenau.de
+       </A><BR>
+    <I>Thu Jan  4 20:25:31 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000001.html">[Alricg-developer] GUI und ein gesundes neues Jahr.
+</A></li>
+        <LI>Next message: <A HREF="000003.html">[Alricg-developer] Erster Entwurf f&#252;r TalenteView
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+danke f&#252;r die Begriffserkl&#228;rung. Bin jetzt ein bissel mehr dahinter 
+gestiegen.
+
+Als Views werden bei Eclipse immer die andockbaren Fenster bezeichnet. 
+Aber die sind im Prinzip nichts anderes als dargestellte Container f&#252;r 
+die SWT Widgets (was meiner Meinung nach das selbe ist wie ein 
+Controller). Das heisst sie dienen der Darstellung der Daten. Dadurch 
+entf&#228;llt eben auch die Unterscheidung zwischen View und Fenster.
+
+Die Sichten die du beschrieben hast, sind im Prinzip das was bei Eclipse 
+und damit auch bei den RCPs, Perspective heisst.
+Diese legen fest welche und wie die Views angezeigt werden. Es kann aber 
+zu jeder Zeit, jeder View hinzugef&#252;gt werden.
+Jede Applikation kann mehrere Perspektiven definieren, die dann abh&#228;nig 
+vom Projekt (z.B. bei Eclipse normales Java Projekt oder Plugin Projekt) 
+geladen werden. Dieses laden der Perspective k&#246;nnten wir ja davon 
+abh&#228;ngig machen, in welchem Modus sich Alricg gerade befindet.
+
+Ich weiss das es in Eclipse auch m&#246;glich ist die Perspective zu 
+speichern, die der Nutzer durch hinzuf&#252;gen von Views erstellt hat. Das 
+sollte man prinzipiell nutzen k&#246;nnen.
+
+Vielleicht schaust du dir wenn du Zeit hast mal das Projekt an was ich 
+auf www.lueckonline.net/alricgonrcp.rar
+gelegt hab. Beim Start wird dort die default perspective geladen, die 
+ein paar Views, im obengenannten Sinn, l&#228;dt. &#220;ber das Men&#252; &quot;Views&quot; kann 
+man auch noch andere Views hinzuf&#252;gen und &#228;ndert somit die Perspective.
+
+Ich werd dann mal anfangen und die Talent Views bauen ... nur um mal ein 
+Gef&#252;hl zu bekommen, und vorallem um eine bessere Diskussionsgrundlage zu 
+haben.
+Ich werde die Views f&#252;r die Talente, Zauber, herkunft/Profession, 
+Nachteile mal in ein Registerelement packen und in der Mitte der GUI 
+platzieren, denk mal das ist das sch&#246;nste und Beste.
+
+Na dann,
+ciao Michel
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000001.html">[Alricg-developer] GUI und ein gesundes neues Jahr.
+</A></li>
+	<LI>Next message: <A HREF="000003.html">[Alricg-developer] Erster Entwurf f&#252;r TalenteView
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/alricg-developer">More information about the Alricg-developer
+mailing list</a><br>
+</body></html>

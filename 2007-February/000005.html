@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Alricg-developer] Schnittstelle zu den Daten
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/alricg-developer/2007-February/index.html" >
+   <LINK REL="made" HREF="mailto:alricg-developer%40lists.berlios.de?Subject=Re%3A%20%5BAlricg-developer%5D%20Schnittstelle%20zu%20den%20Daten&In-Reply-To=%3C45C2616A.5080200%40gmx.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Alricg-developer] Schnittstelle zu den Daten</H1>
+    <B>Vincent</B> 
+    <A HREF="mailto:alricg-developer%40lists.berlios.de?Subject=Re%3A%20%5BAlricg-developer%5D%20Schnittstelle%20zu%20den%20Daten&In-Reply-To=%3C45C2616A.5080200%40gmx.de%3E"
+       TITLE="[Alricg-developer] Schnittstelle zu den Daten">vinc99 at gmx.de
+       </A><BR>
+    <I>Thu Feb  1 22:53:46 CET 2007</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Michael!
+
+So, jetzt komme ich auch zum antworten.
+
+Vor allem anderen was Grunds&#228;tzliches zu mir und dem Projekt.
+Wie es aussieht sind wir die beiden einzigen, die z.Z. noch bei dem 
+Projekt dabei sind. Das ist mit Sicherheit auch meine Schuld, da ich zu 
+wenig selber schaffe. Das wird sich auch nicht sooo schnell &#228;ndern, da 
+ich mit meinem neuen Vollzeit-Job einfach wenig Zeit habe, und vor allem 
+auch wenig Lust nach 8-Stunden vorm PC Sitzen noch zu hause weiter zu 
+machen. Aber das wird sich wieder &#228;ndern, ich gew&#246;hne mich langsam an 
+die 8 Stunden und das Projekt ist mir auch ganz bestimmt nicht aus dem Kopf.
+Das hei&#223;t das du im Moment ein wenig auf dich alleine gestellt bist.... 
+zumindest was das Implementieren angeht. Ansonsten versuche ich 
+nat&#252;rlich f&#252;r alle Fragen zur Verf&#252;gung zu stehen.
+
+Wenn es dir Spa&#223; macht freue ich mich nat&#252;rlich wenn du weitermachst, 
+aber ich wollte das nur kl&#228;ren, damit du wei&#223; woran du im Moment bist.
+
+&gt;<i> Ich br&#228;uchte jetzt irgendwie Infos, wie diese TreeTables mit Daten 
+</I>&gt;<i> gef&#252;llt werden, bzw. woher? 
+</I>Es existieren Schnittstellen in dem package &quot;org.d3s.alricg.gui.views&quot;. 
+Dort sind Interfaces zu finden sowie Implementierungen f&#252;r Talente und 
+Zauber. Diese wurden noch f&#252;r die Swing-Version Erstellung und haben 
+dort auch funktioniert, auch wenn es bestimmt noch Verbesserungsw&#252;rdig 
+ist. In dem Wiki-Artikel 
+&quot;<A HREF="http://www.alricg.de/devWiki/index.php/Tables_und_TreeTables_mit_ViewSchema">http://www.alricg.de/devWiki/index.php/Tables_und_TreeTables_mit_ViewSchema</A>&quot; 
+findest du ein wenig Doku, wie das ganze gedacht ist.
+Das ganze ist leider relativ Komplex, weswegen ich meine das es 
+vielleicht Verbessert werden kann. Vielleicht hast du ja irgendwelche 
+Vorschl&#228;ge? Noch k&#246;nnten wir das Interface nochmal umstellen.
+
+&gt;<i> Ach ja hat jemand ne Idee wie wir meine RCP Implementierung in das SVN 
+</I>&gt;<i> bekommen? Im Moment hab ich das nur in meinem eigenen SVN. Ich k&#246;nnte 
+</I>&gt;<i> die Dateien nat&#252;rlich einfach in das alricg Verzeichnis kopieren und 
+</I>&gt;<i> hochladen.
+</I>Ich glaube nicht das jemand noch &#196;nderungen hat... Lade es einfach hoch! 
+Vielleicht kannst du die RCP-Klassen in ein eigenes Source-Verzeichnis 
+packen? Ist vielleicht besser wegen der &#220;bersicht.
+
+mfg,
+Vincent
+
+
+
+Das hei&#223;t aber das
+
+Wobei ich Momentan auch keine gro&#223;e Hilfe bin Seit ich Vollzeit arbeite 
+bleibt f&#252;r Alricg einfach nicht viel Zeit. Das wird sich aber auch 
+wieder &#228;ndern, sprich, ich werde mir die Zeit wieder nehmen. Ich habe 
+das Projekt jedenfalls nicht aus
+
+
+
+
+Michael L&#252;ck schrieb:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> habe jetzt ein eigenes kleines SWT-Widget geschrieben, das man f&#252;r alle 
+</I>&gt;<i> die Views benutzen kann, die zwei TreeTables haben, zwischen denen man 
+</I>&gt;<i> die Eintr&#228;ge hin-und-her schubsen kann.
+</I>&gt;<i>
+</I>&gt;<i> Ich br&#228;uchte jetzt irgendwie Infos, wie diese TreeTables mit Daten 
+</I>&gt;<i> gef&#252;llt werden, bzw. woher? ist sowas schon implementiert oder steht das 
+</I>&gt;<i> noch aus? Je nachdem werde ich dann weitermachen. Also entweder ich 
+</I>&gt;<i> stelle die Schnittstelle zur Verf&#252;gung, oder ich fange an die 
+</I>&gt;<i> Perspectives f&#252;r die 3 Programm Modi zusammenzustellen.
+</I>&gt;<i>
+</I>&gt;<i> Ach ja hat jemand ne Idee wie wir meine RCP Implementierung in das SVN 
+</I>&gt;<i> bekommen? Im Moment hab ich das nur in meinem eigenen SVN. Ich k&#246;nnte 
+</I>&gt;<i> die Dateien nat&#252;rlich einfach in das alricg Verzeichnis kopieren und 
+</I>&gt;<i> hochladen. Da w&#252;rde ich aber sagen, ihr commitet ersmal alle &#196;nderungen 
+</I>&gt;<i> und ich check das neu aus. Sonst gibts da Probleme.
+</I>&gt;<i>
+</I>&gt;<i> Gebt mir Bescheid wenn ihr soweit seid.
+</I>&gt;<i>
+</I>&gt;<i> Michel
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Alricg-developer mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/alricg-developer">Alricg-developer at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/alricg-developer">https://lists.berlios.de/mailman/listinfo/alricg-developer</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/alricg-developer">More information about the Alricg-developer
+mailing list</a><br>
+</body></html>

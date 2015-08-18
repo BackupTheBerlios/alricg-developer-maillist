@@ -1,0 +1,243 @@
+From michael.lueck at stud.tu-ilmenau.de  Tue Jan  2 12:29:10 2007
+From: michael.lueck at stud.tu-ilmenau.de (=?ISO-8859-15?Q?Michael_L=FCck?=)
+Date: Tue, 02 Jan 2007 12:29:10 +0100
+Subject: [Alricg-developer] GUI und ein gesundes neues Jahr.
+Message-ID: <459A4206.9070406@stud.tu-ilmenau.de>
+
+Hi,
+also in n?chster Zeit werde ich wohl doch endlich mal dazukommen noch 
+bissel was an der GUI zu machen, bzw. endlich mal anzufangen.
+Hab die Artikel im Wiki gelesen, allerdings komm ich da nich so richtig 
+raus.
+Zum Beispiel die Talente.
+Soll ein View diese Tabellen wiedergeben (je nach Bearbeitungsart? also 
+Neu oder bearbeiten oder so).
+
+Die grunds?tzliche Ansicht w?re das geringste Problem, wie ja der 
+Prototyp schon gezeigt hat.
+Jetzt w?rde ich halt anfangen und den Views TreeTables und so, aus dem 
+SWT, spendieren.
+M?sste dann halt nur wisse was ihr f?r schnittstellen braucht.
+
+Na dann w?nsch ich mal dem ganzen Team ein erfolgreiches neues Jahr, auf 
+das wir dieses Jahr weiterkommen :-)
+
+Michel
+
+
+
+From vinc99 at gmx.de  Thu Jan  4 19:15:14 2007
+From: vinc99 at gmx.de (Vincent)
+Date: Thu, 04 Jan 2007 19:15:14 +0100
+Subject: [Alricg-developer] GUI und ein gesundes neues Jahr.
+In-Reply-To: <459A4206.9070406@stud.tu-ilmenau.de>
+References: <459A4206.9070406@stud.tu-ilmenau.de>
+Message-ID: <459D4432.5030808@gmx.de>
+
+Hallo Michel!
+
+Ich war ?ber Silvester ein paar Tage weggefahren, bin erst jetzt wieder 
+zuhause. Daher die sp?te Antwort.
+
+Ich bin mir nicht ganz sicher, was du mit "View" meinst, daher mit eine 
+kurze Begriffsdefinition wie ich es bisher verwendet habe:
+- Sicht: Eine Menge von "Eclipse-Fenstern" und deren Anordnung (also 
+Gr??e, Position).
+- View: Hier gemeint in Sinne von "Darstellung"... ja, das ist nicht 
+sch?n, da View ja auch Sicht hei?en kann... Also mit View habe ich die 
+Darstellung von bestimmten Daten gemeint, also im Grunde ein Controll 
+was direkt mit Daten gekoppelt ist. Dies kann z.B. eine Tabelle aller 
+Talente sein, die ein Held bei der Generierung w?hlen darf. Ein View 
+wird i.d.R. ein Panel sein, welches eine Table/TreeTable enth?lt und ein 
+paar Controlls um diese zu Steuern.
+- Fenster: Ein Fenster ist das, was ich bei Sicht mit "Eclipse-Fenstern" 
+gemeint habe. Ein Fenster wird i.d.R. genau einen View enthalten (kann 
+aber auch Ausnahmen geben, besonders bei Editor).
+
+Auf Talente bezogen w?rde es folgende Sichten und Views geben:
+1. "Talente f?r Held bei Generierung" (das beinhaltet auch das 
+entfernen, Stufe angeben)
+
+    Die w?rde neben den Standard-Fenstern (Navigation, ?bersicht ?ber
+    den Held, ?bersicht f?r den Stand der Generierung, evtl. Hilfe,
+    o.?.) ein Fenster beinhalten mit allen Talenten die der Held
+    ausw?hlen kann (um  neue Talente hinzuf?gen zu k?nnen), und einem
+    Fenster mit allen Talenten die der Held bereits gew?hlt hat (um die
+    Stufe zu Editieren, Talente zu entfernen usw.)
+    Diese beiden Talent-Fenster, w?rden jeweils einen "View" enthalten.
+    Dieser View ist eine Darstellung der ben?tigten Talente und w?rde in
+    erster Linie eine TreeTable sein.
+
+2. "Talente f?r Held bei Heldenmanagement"
+
+    Neben den Standard-Fenstern (Navigation, ?bersicht ?ber den Held,
+    evtl. Hilfe, o.?.): Ein Fenster mit allen Talenten die der Held
+    ausw?hlen kann (um  neue Talente hinzuf?gen zu k?nnen), und einem
+    Fenster mit allen Talenten die der Held bereits gew?hlt hat (um die
+    Stufe zu Editieren,  usw.). Es ist also sehr ?hnlich zu 1). Trotzdem
+    ist es nicht gleich, so das hier andere Views ben?tigt werden
+    (andere Dinge m?ssen Dargestellt werden, andere Controlls sind n?tig).
+
+3. "Talent bearbeiten beim Editor"
+
+    Diese Sicht ist also f?r den Editor gedacht, also nicht f?r die
+    Bearbeitung eines Chars, sondern f?r die Bearbeitung des Talents
+    direkt. Diese Sicht beinhaltet neben den Standard-Fenstern
+    (Navigation, evtl. Hilfe, o.?.) eine Fenster mit der Liste aller
+    Talente zum Ausw?hlen eines Talents f?r die Bearbeitung, und ein
+    Fenster wo das Talent bearbeitet werden kann (bzw. neu erstellt/
+    gel?scht). Hier k?nnte es auch passieren das nur ein Fenster beide
+    Views enth?lt.
+
+
+
+Weiteres Vorgehen, wie ich es f?r Sinnvoll halte: Die Views brauchst du 
+erstmal nicht machen, ich w?rde es gut finden wenn du dich auf die 
+Steuerung der Sichten/Fenster konzentrierst.
+Dabei erscheint mir die Implementierung folgender Dinge in dieser 
+Reihenfolge sinnvoll:
+1. Anzeige / Auswahl von Sichten. In einem Menu werden verschiedene 
+Sichten angezeigt und werden per Mausklick geladen.
+2. Diese Anzeige von Sichten mu? sich je mach Modi (Generierung / 
+Management / Editor) unterschieden k?nnen, da wir ja f?r jeden Modus 
+andere Sichten ben?tigen. Sch?n w?hre es wenn du etwas einbaust wo wir 
+diese drei Modi Test weise einstellen k?nnen (ein Menu, ein Start 
+Fenster mit 3 Buttons o.?.)
+3. Anzeige / Auswahl von Fenstern: In einem Menu werden alle m?glichen 
+Fenster des Modus angezeigt. Der Benutzer kann ?ber dieses Menu neue 
+Fenster ?ffnen. Ein Fenster ist z.B. "Liste alle Talente", "Liste der 
+Talente des Helden", "Liste aller Zauber", .... "Navigation", "Hilfe", 
+"?bersicht ?ber Held", usw.
+4. Speichern / Laden von Fenstern und Ansichten. Die Sichten sollen 
+ver?ndert/gel?scht und gespeichert werden k?nnen. Dabei gibt es eine Art 
+"Save" Befehl, mit dem die aktuellen Fenster und deren Anordnung 
+gespeichert wird. Es wird dabei die aktuelle Sicht "?berschrieben". 
+(Eine Sicht ist immer aktuell). Beim starten des Programms werden also 
+die Sichten aus einer Datei ausgelesen. Diese Datei kann die 
+"config.xml" sein. Du kannst aber auch einen eignende Datei benutzen, 
+falls dir das sinnvoller erscheint.
+5.Es soll "Default"-Sichten geben, die der Benutzer zwar ?ndern, aber 
+auch mit einen "Restore"-Befehl wiederherstellen kann. Alle Sichten die 
+von Anfang an im Programm zur Verf?gung stehen, die solche 
+"Default"-Sichten. Diese "original-Daten" f?r das Restore k?nnen 
+Hard-gecoded sein, m?ssen es aber nicht.
+6. Der Benutzer soll auch eignende Sichten anlegen k?nnen, indem der die 
+aktuelle Sicht unter neuem Namen speichert.
+
+Im Grunde wird also ein Management f?r Sichten und Fenster ben?tigt. Der 
+Inhalt der Fenster ist dabei erstmal egal, am besten f?llst du die 
+Fenster einfach mit jeweils einem Panel und Label auf dem etwas wie 
+"Gesamt TalentListe", "Helden TalentListe" usw. steht.
+
+Wegen der Umbenennung/SVN-Problem: Ich hab jetzt leider keine Zeit mehr, 
+werde mir das nachher nochmal im Forum anschauen. Grunds?tzlich k?nnen 
+wird das auch gerne umbenennen, wenn es nur um Dateinamen geht.
+
+
+@Michel: Wir k?nnen uns auch gerne im Chat treffen oder Telefonieren, 
+wenn es noch Fragen gibt die per Mail schlecht zu l?sen sind.
+
+
+Ich w?nsche auch auch mal nachtr?glich ein sch?nes neues Jahr und hoffe 
+das es das "Alricg-Jahr" wird ;-)
+
+mfg,
+Vincent
+
+
+From michael.lueck at stud.tu-ilmenau.de  Thu Jan  4 20:25:31 2007
+From: michael.lueck at stud.tu-ilmenau.de (=?ISO-8859-15?Q?Michael_L=FCck?=)
+Date: Thu, 04 Jan 2007 20:25:31 +0100
+Subject: [Alricg-developer] GUI und ein gesundes neues Jahr.
+In-Reply-To: <459D4432.5030808@gmx.de>
+References: <459A4206.9070406@stud.tu-ilmenau.de> <459D4432.5030808@gmx.de>
+Message-ID: <459D54AB.5060802@stud.tu-ilmenau.de>
+
+Hi,
+
+danke f?r die Begriffserkl?rung. Bin jetzt ein bissel mehr dahinter 
+gestiegen.
+
+Als Views werden bei Eclipse immer die andockbaren Fenster bezeichnet. 
+Aber die sind im Prinzip nichts anderes als dargestellte Container f?r 
+die SWT Widgets (was meiner Meinung nach das selbe ist wie ein 
+Controller). Das heisst sie dienen der Darstellung der Daten. Dadurch 
+entf?llt eben auch die Unterscheidung zwischen View und Fenster.
+
+Die Sichten die du beschrieben hast, sind im Prinzip das was bei Eclipse 
+und damit auch bei den RCPs, Perspective heisst.
+Diese legen fest welche und wie die Views angezeigt werden. Es kann aber 
+zu jeder Zeit, jeder View hinzugef?gt werden.
+Jede Applikation kann mehrere Perspektiven definieren, die dann abh?nig 
+vom Projekt (z.B. bei Eclipse normales Java Projekt oder Plugin Projekt) 
+geladen werden. Dieses laden der Perspective k?nnten wir ja davon 
+abh?ngig machen, in welchem Modus sich Alricg gerade befindet.
+
+Ich weiss das es in Eclipse auch m?glich ist die Perspective zu 
+speichern, die der Nutzer durch hinzuf?gen von Views erstellt hat. Das 
+sollte man prinzipiell nutzen k?nnen.
+
+Vielleicht schaust du dir wenn du Zeit hast mal das Projekt an was ich 
+auf www.lueckonline.net/alricgonrcp.rar
+gelegt hab. Beim Start wird dort die default perspective geladen, die 
+ein paar Views, im obengenannten Sinn, l?dt. ?ber das Men? "Views" kann 
+man auch noch andere Views hinzuf?gen und ?ndert somit die Perspective.
+
+Ich werd dann mal anfangen und die Talent Views bauen ... nur um mal ein 
+Gef?hl zu bekommen, und vorallem um eine bessere Diskussionsgrundlage zu 
+haben.
+Ich werde die Views f?r die Talente, Zauber, herkunft/Profession, 
+Nachteile mal in ein Registerelement packen und in der Mitte der GUI 
+platzieren, denk mal das ist das sch?nste und Beste.
+
+Na dann,
+ciao Michel
+
+
+From michael.lueck at stud.tu-ilmenau.de  Sun Jan 21 21:24:15 2007
+From: michael.lueck at stud.tu-ilmenau.de (=?ISO-8859-15?Q?Michael_L=FCck?=)
+Date: Sun, 21 Jan 2007 21:24:15 +0100
+Subject: [Alricg-developer] =?iso-8859-15?q?Erster_Entwurf_f=FCr_TalenteVi?=
+	=?iso-8859-15?q?ew?=
+Message-ID: <45B3CBEF.5080206@stud.tu-ilmenau.de>
+
+Hi,
+
+also ich hab da mal was ins Forum gepostet, bez?glich des 
+TalenteViews.Hab dort auch ein Bild des ersten Prototyps ( der noch 
+nicht alle Features enth?lt die im Wiki angedacht sind).
+Also w?re nett wenn wir da demn?chst nochmal dr?ber diskutieren k?nnten.
+
+Bis denn,
+Michel
+
+
+From michael.lueck at stud.tu-ilmenau.de  Mon Jan 29 17:41:46 2007
+From: michael.lueck at stud.tu-ilmenau.de (=?ISO-8859-15?Q?Michael_L=FCck?=)
+Date: Mon, 29 Jan 2007 17:41:46 +0100
+Subject: [Alricg-developer] Schnittstelle zu den Daten
+Message-ID: <45BE23CA.9030002@stud.tu-ilmenau.de>
+
+Hi,
+
+habe jetzt ein eigenes kleines SWT-Widget geschrieben, das man f?r alle 
+die Views benutzen kann, die zwei TreeTables haben, zwischen denen man 
+die Eintr?ge hin-und-her schubsen kann.
+
+Ich br?uchte jetzt irgendwie Infos, wie diese TreeTables mit Daten 
+gef?llt werden, bzw. woher? ist sowas schon implementiert oder steht das 
+noch aus? Je nachdem werde ich dann weitermachen. Also entweder ich 
+stelle die Schnittstelle zur Verf?gung, oder ich fange an die 
+Perspectives f?r die 3 Programm Modi zusammenzustellen.
+
+Ach ja hat jemand ne Idee wie wir meine RCP Implementierung in das SVN 
+bekommen? Im Moment hab ich das nur in meinem eigenen SVN. Ich k?nnte 
+die Dateien nat?rlich einfach in das alricg Verzeichnis kopieren und 
+hochladen. Da w?rde ich aber sagen, ihr commitet ersmal alle ?nderungen 
+und ich check das neu aus. Sonst gibts da Probleme.
+
+Gebt mir Bescheid wenn ihr soweit seid.
+
+Michel
+
+
